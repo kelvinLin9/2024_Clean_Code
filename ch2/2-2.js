@@ -14,13 +14,6 @@ const orders = [
 ];
 
 // 1. 使用 forEach 發送通知
-orders.forEach(function(orders, index){
-  console.log(orders.customer + '您好，您的訂單編號是' + orders.id + '，金額是' + orders.amount + '元');
-})
+
 
 // 2. 使用 filter 篩選大額訂單
-
-const bigOrders = orders.filter(function(orders){
-  return orders.amount > 100
-})
-console.log(bigOrders);
