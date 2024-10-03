@@ -5,3 +5,19 @@ const marketingChannels = [
   { name: 'Twitter Ads', spend: 4000, revenue: 10000, roas: 2.5 },
   { name: 'Instagram Ads', spend: 6000, revenue: 15000, roas: 2.5 }
 ];
+
+// 1. 使用 forEach 發送通知
+const res = marketingChannels.filter(function(item, index) {
+  return item.roas > 2
+})
+console.log(res);
+
+// 2. 使用 filter 篩選大額訂單
+
+let totalSpent = 0;
+let totalRevenue = 0;
+marketingChannels.forEach(function(item){
+  totalSpent += item.spend;
+  totalRevenue += item.revenue;
+})
+console.log(totalSpent, totalRevenue);
