@@ -18,3 +18,18 @@ let data = [
     "rate": 7
   }
 ];
+
+let totalPrice = 0
+let kaohsiung = 0
+data.forEach(function(item){
+  // console.log(item.price)
+  // totalPrice += item.price
+  // if(item.rate >= 7){
+  //   console.log(item)
+  // }
+  if(item.area === '高雄'){
+    kaohsiung += 1
+  }
+})
+// console.log(totalPrice)
+console.log(kaohsiung)
