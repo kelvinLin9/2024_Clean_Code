@@ -26,41 +26,55 @@ const bmiStatesData = {
   },
 }
 
-
-function bmi(height, weight) {
-  const x = (weight / ((height / 100) * (height / 100))).toFixed(2);
-  
-  if (x < 18.5) {
+function calculateBMI(height, weight) {
+  return bmi = (weight / ((height / 100) * (height / 100))).toFixed(2);
+}
+function getBMIState(bmi) {
+  const bmiState = ''
+  if (bmi < 18.5) {
     bmiState = "overThin";
-  } else if (18.5 <= x && x < 24) {
+  } else if (bmi < 24) {
     bmiState = "normal";
-  } else if (24 <= x && x < 27) {
+  } else if (bmi < 27) {
     bmiState = "overWeight";
-  } else if (27 <= x && x < 30) {
+  } else if (bmi < 30) {
     bmiState = "mildFat";
-  } else if (30 <= x && x < 35) {
+  } else if (bmi < 35) {
     bmiState = "moderateFat";
-  } else if (x >= 35) {
+  } else if (bmi >= 35) {
     bmiState = "severeFat";
   } else {
     console.log("您的數值輸入錯誤，請重新輸入")
   }
-  
+  return bmiState;
+}
+function addRecord(bmi, bmiState) {
   let obj = {};
   obj.bmi = bmi;
   obj.state = bmiState;
   bmiHistoryData.push(obj);
+}
+
+function printBmi(height, weight) {
+  const bmi = calculateBMI(height, weight);
+  const bmiState = getBMIState(bmi);
+
+  if (!bmiState) {
+    return '您的數值輸入錯誤，請重新輸入';
+  }
+
+  addRecord(bmi, bmiState);
   
   console.log(`您的體重${bmiStatesData[bmiState].state}，健康指數為${bmiStatesData[bmiState].color}`)
 }
 
 function showHistoryData(){
-  const totalNum = bmiHistoryData.length;
-  const lastNum = totalNum - 1;
-  const lastState = bmiHistoryData[lastNum].state
-  console.log(totalNum, lastNum, lastState);
+  const totalRecord = bmiHistoryData.length;
+  const lastRecord = totalRecord - 1;
+  const lastState = bmiHistoryData[lastRecord].state
+  console.log(totalRecord, lastRecord, lastState);
 
-  console.log(`您總共計算 ${totalNum} 次 BMI 紀錄，最後一次 BMI 指數為 ${bmiHistoryData[lastNum].bmi}，體重${bmiStatesData[lastState].state}！健康指數為${bmiStatesData[lastState].color}！`);
+  console.log(`您總共計算 ${totalRecord} 次 BMI 紀錄，最後一次 BMI 指數為 ${bmiHistoryData[lastRecord].bmi}，體重${bmiStatesData[lastState].state}！健康指數為${bmiStatesData[lastState].color}！`);
 }
 
 // 以下需一行一行執行
