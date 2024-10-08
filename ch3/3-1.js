@@ -1,35 +1,26 @@
 function fetchData() {
-  return new Promise(function(resolve) {
-      setTimeout(() => {
-          resolve("資料已經獲取");
-      }, 2000);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const success = Math.random() > 0.5;
+
+      if (success) {
+        resolve("資料a");
+      } else {
+        reject("無法獲取資料");
+      }
+    }, 2000);
   });
 }
 
 function getDataWithThen() {
   console.log("開始獲取資料...");
-  fetchData().then(function (data) {
-      console.log(data);
+  fetchData()
+  .then((data) => {
+    console.log('成功', data);
+  })
+  .catch((error) => {
+    console.log('失敗', error);
   });
 }
 
 getDataWithThen();
-
-
-
-// function fetchData() {
-//   return new Promise(function(resolve) {
-//       setTimeout(() => {
-//           resolve("資料已經獲取");
-//       }, 2000);
-//   });
-// }
-
-// // 使用 Async/Await 的作法
-// async function getData() {
-//   console.log("開始獲取資料...");
-//   const data = await fetchData();
-//   console.log(data);
-// }
-
-// getData();
