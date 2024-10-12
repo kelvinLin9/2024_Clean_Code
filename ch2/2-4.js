@@ -1,4 +1,4 @@
-const ticketList = [
+const data = [
   {
     id: 0,
     area: "台中"

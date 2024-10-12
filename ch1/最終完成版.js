@@ -30,7 +30,7 @@ function calculateBMI(height, weight) {
   return bmi = (weight / ((height / 100) * (height / 100))).toFixed(2);
 }
 function getBMIState(bmi) {
-  const bmiState = ''
+  let bmiState = ''
   if (bmi < 18.5) {
     bmiState = "overThin";
   } else if (bmi < 24) {

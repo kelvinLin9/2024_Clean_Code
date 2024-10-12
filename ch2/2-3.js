@@ -5,17 +5,3 @@ const marketingChannels = [
   { name: 'Twitter Ads', spend: 4000, revenue: 10000, roas: 2.5 },
   { name: 'Instagram Ads', spend: 6000, revenue: 15000, roas: 2.5 }
 ];
-
-// const highROASChannels = marketingChannels.filter(function(channel){
-//   return channel.roas > 3
-// })
-// console.log(highROASChannels);
-
-let totalSpend = 0
-let totalRevenue = 0
-marketingChannels.forEach(function(channel){
-  totalSpend += channel.spend
-  totalRevenue += channel.revenue
-})
-console.log(totalSpend)
-console.log(totalRevenue)
