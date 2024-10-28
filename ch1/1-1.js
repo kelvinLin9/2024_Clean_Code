@@ -1,6 +1,6 @@
 // 1 - 使用具有意義且可閱讀的名稱
 // 1.
-const colorData = ['red', 'white', 'black'];
+const data = ['red', 'white', 'black'];
 
 // 2. 無法點擊的按鈕狀態
 let status = 'disabled';
