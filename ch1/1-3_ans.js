@@ -78,6 +78,6 @@ function showHistoryData(){
 printBmi(178, 20); // 您的體重過輕，健康指數為藍色
 printBmi(178, 70); // 您的體重正常，健康指數為紅色
 printBmi(178, 85); // 您的體重過重，健康指數為澄色
-printBmi(200, 105)
+printBmi(200, 1005)
 
 showHistoryData(); // 您總共計算 3 次 BMI 紀錄，最後一次 BMI 指數為 26.83，體重過重！健康指數為澄色！
