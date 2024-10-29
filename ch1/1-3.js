@@ -47,7 +47,7 @@ function bmi(height, weight) {
   }
   
   let obj = {};
-  obj.bmi = bmi;
+  obj.bmi = x;
   obj.state = bmiState;
   bmiHistoryData.push(obj);
   

@@ -27,20 +27,20 @@ const bmiStatesData = {
 }
 
 
-function bmi(height, weight) {
-  const x = (weight / ((height / 100) * (height / 100))).toFixed(2);
+function PrintBmi(height, weight) {
+  const bmi = (weight / ((height / 100) * (height / 100))).toFixed(2);
   
-  if (x < 18.5) {
+  if (bmi < 18.5) {
     bmiState = "overThin";
-  } else if (18.5 <= x && x < 24) {
+  } else if (bmi < 24) {
     bmiState = "normal";
-  } else if (24 <= x && x < 27) {
+  } else if (24 <= bmi && bmi < 27) {
     bmiState = "overWeight";
-  } else if (27 <= x && x < 30) {
+  } else if (27 <= bmi && bmi < 30) {
     bmiState = "mildFat";
-  } else if (30 <= x && x < 35) {
+  } else if (30 <= bmi && bmi < 35) {
     bmiState = "moderateFat";
-  } else if (x >= 35) {
+  } else if (bmi >= 35) {
     bmiState = "severeFat";
   } else {
     console.log("您的數值輸入錯誤，請重新輸入")
