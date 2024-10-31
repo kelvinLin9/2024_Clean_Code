@@ -26,14 +26,14 @@ const bmiStatesData = {
   },
 }
 
-function calculateBMI(height, weight) {
+function calculateBmi(weight, height){
   return (weight / ((height / 100) * (height / 100))).toFixed(2);
 }
 
-function getBmiState(bmi) {
+function getBmiState(bmi){
   if (bmi < 18.5) {
     bmiState = "overThin";
-  } else if (bmi < 24) {
+  } else if (18.5 <= bmi && bmi < 24) {
     bmiState = "normal";
   } else if (24 <= bmi && bmi < 27) {
     bmiState = "overWeight";
@@ -49,7 +49,7 @@ function getBmiState(bmi) {
   return bmiState
 }
 
-function addRecord(bmi, bmiState) {
+function addRecode(bmi, bmiState) {
   let obj = {};
   obj.bmi = bmi;
   obj.state = bmiState;
@@ -57,11 +57,11 @@ function addRecord(bmi, bmiState) {
 }
 
 function printBmi(height, weight) {
-  const bmi = calculateBMI(height, weight)
+  const bmi =  calculateBmi(weight, height)
   
   const bmiState = getBmiState(bmi)
   
-  addRecord(bmi, bmiState)
+  addRecode(bmi, bmiState)
   
   console.log(`您的體重${bmiStatesData[bmiState].state}，健康指數為${bmiStatesData[bmiState].color}`)
 }
@@ -79,5 +79,6 @@ function showHistoryData(){
 printBmi(178, 20); // 您的體重過輕，健康指數為藍色
 printBmi(178, 70); // 您的體重正常，健康指數為紅色
 printBmi(178, 85); // 您的體重過重，健康指數為澄色
-printBmi(178, 185); 
+printBmi(178, 185);
+
 showHistoryData(); // 您總共計算 3 次 BMI 紀錄，最後一次 BMI 指數為 26.83，體重過重！健康指數為澄色！
